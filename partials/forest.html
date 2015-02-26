@@ -19,24 +19,47 @@
       <button ng-click="forest = true" type="submit" class="btn btn-default">Submit</button>
     </form>
   </div>
-
+<!-- This is the first scenario  -->
   <div ng-show="forest" ng-repeat="item in players">
     <h4 class="centered">You have {{item.points}} points</h4>
     <h3>Welcome, {{item.name}}</h3>
+    <div ng-hide="crowbarGasStation">
+      <div ng-show="crowbarScenario" ng-hide="crowbarWoods">
     <p> You, {{item.name}}, are in the deep woods with a {{item.gear}}.  But you knew that, didn't you??<br> You have a few options ahead of you.  </p>
+<p>Good choice! Ahead of you to your left is a magnificent lit up gas station, possibly with some other survivors inside. To your right is darkness, a chill wind. Underneath the wind, there's the creaking of terrible whispers, like someone who hasn't spoken in some time.  It makes you shiver, but you do have your crow bar with you, and something about your adventurous spirit.  You have a choice:</p>
     {{item.scenario}}
+      <button ng-click="crowbarGasStation = true">Go to the Gas Station!</button>
+      <button ng-click="crowbarWoods = true">Follow your spirit, go to the woods!</button>
+      <a ui-sref="gasStation">Gas station</a>
+    </div>
+  </div>
 
-    <div ng-show="crowbarScenario"><p>Good choice! Ahead of you to your left is a magnificent lit up gas station, possibly with some other survivors inside. To your right is darkness, a chill wind. Underneath the wind, there's the creaking of terrible whispers, like someone who hasn't spoken in some time.  It makes you shiver, but you do have your crow bar with you, and something about this your adventurous spirit.  You have a choice:</p>
+    <div ng-show="crowbarGasStation">
+      <p>You're at the gas station. That was a mistake!</p>
+    </div>
+
+    <div ng-show="crowbarWoods">
+      <p>You decide to follow your gut and enter the woods. </p>
+    </div>
+
+    <div ng-show="flaregunScenario">
+      <p>Your flaregun quickly goes off in your face, you lose 5 pts.  Sorry about that.  <br> Moving on . . . <br> Take a look around you.  To your left, you can see a magnificently lit up gas station, possibly with some surviors inside.  There's a warm feeling about the place: security, safety.  And to your right, darkness.  A chill wind.  Beneath the wind you think you hear some horrible whispering, as of voices that have not spoken for a very long time.  You shiver, but you do have your flaregun (albeit, a little malfunctioning), and surely that can protect you as you embrace your adventurouis spirit.  So you have a choice:</p>
       <button><a ui-sref="gasStation">Go to the Gas Station!</a></button><br>
       <button><a ui-sref="theWoods">Follow your spirit, go to the woods!</a></button>
     </div>
 
-    <div ng-show="flaregunScenario">
-      <p>Your flaregun quickly goes off in your face, you lose 5 pts.  Sorry about that.  <br> Moving on . . . <br>                                 </p>
-    </div>
-    
     <div ng-show="flashlightScenario">
       <p>You picked a flashlight over a crowbar? Didn't I just say the moon was out, and full? Think about your life's choices. You're basically not really into this game, so let's see how you do if you start over.  You're dead.  A thousand zombies were attracted to your flashlight and ate your brains.</p>
       <button><a ui-sref="home">Start Over</a></button>
     </div>
+
+  <!-- This is a second scenario -->
+
+
+
+
+
+
+
+
   </div>

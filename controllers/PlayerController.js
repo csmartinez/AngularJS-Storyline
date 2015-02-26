@@ -5,6 +5,11 @@ ghostStory.controller('PlayerCtrl', function PlayerCtrl($scope, PlayersFactory) 
   $scope.flashlightScenario = false;
   $scope.flaregunScenario = false;
 
+  $scope.gasStationCrowbar = false;
+  $scope.gasStationFlareGun = false;
+  $scope.theWoodsCrowbar = false;
+  $scope.theWoodsFlareGun = false;
+
   $scope.chooseScenario = function() {
     PlayersFactory.addPlayer();
     if ($scope.players[0].gear === "crowbar") {
@@ -18,4 +23,11 @@ ghostStory.controller('PlayerCtrl', function PlayerCtrl($scope, PlayersFactory) 
     }
   };
 
+  $scope.chooseScenarioTwo = function() {
+    if ($scope.players[0].gear === "crowbar") {
+      $scope.gasStaionCrowbar = true;
+    } else {
+      $scope.gasStationFlareGun = true;
+    }
+  }
 });

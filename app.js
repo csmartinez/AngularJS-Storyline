@@ -11,4 +11,14 @@ ghostStory.config(function($stateProvider) {
   templateUrl: "partials/forest.html",
   controller: "PlayerCtrl"
   });
+
+  $stateProvider.state('gasStation', {
+    url: "/gasStation",
+    templateUrl: "partials/gasStation.html"
+  });
+
+  $stateProvider.state('theWoods', {
+    url: "/theWoods",
+    templateUrl: "partials/theWoods.html"
+  });
 });

@@ -1,24 +1,24 @@
 <div class="narration">
   <div ng-hide="forest">
     <h1>Backstory</h1>
-  <p>Your car has broken down!  It was a crappy Model-T anyway, BUT, here you are in a spooky spooky wood, far from home in a strange and discomfiting place. A full moon shines down casting deep shadows on the road. Deep thicket lines both sides of the road, but there is a small opening; an old footpath disppears into the dark of the forest.</p>
+    <p>Your car has broken down!  It was a crappy Model-T anyway, BUT, here you are in a spooky spooky wood, far from home in a strange and discomfiting place. A full moon shines down casting deep shadows on the road. Deep thicket lines both sides of the road, but there is a small opening; an old footpath disppears into the dark of the forest.</p>
 
-  <h3>Your Name</h3>
-  <form ng-submit="chooseScenario()" ng-hide="forest" class="form-inline" role="form">
-    <div class="form-group">
-      <input type="text" ng-model="PlayersFactory.playerName" class="form-control" placeholder="Name Here" required>
-    </div>
-    <p>You only have enough pocket space to salvage one of these items from your Model-T</p>
-    <div class="form-group">
-      <select id="gear" type="select" ng-model="PlayersFactory.items" class="form-control" required>
-        <option value="flashlight">Flashlight</option>
-        <option value="crowbar">Crowbar</option>
-        <option value="flaregun">Flaregun</option>
-      </select>
-    </div>
-    <button ng-click="forest = true" type="submit" class="btn btn-default">Submit</button>
-  </form>
-</div>
+    <h3>Your Name</h3>
+    <form ng-submit="chooseScenario()" ng-hide="forest" class="form-inline" role="form">
+      <div class="form-group">
+        <input type="text" ng-model="PlayersFactory.playerName" class="form-control" placeholder="Name Here" required>
+      </div>
+      <p>You only have enough pocket space to salvage one of these items from your Model-T</p>
+      <div class="form-group">
+        <select id="gear" type="select" ng-model="PlayersFactory.items" class="form-control" required>
+          <option value="flashlight">Flashlight</option>
+          <option value="crowbar">Crowbar</option>
+          <option value="flaregun">Flaregun</option>
+        </select>
+      </div>
+      <button ng-click="forest = true" type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
 
   <div ng-show="forest" ng-repeat="item in players">
     <h4 class="centered">You have {{item.points}} points</h4>
@@ -26,11 +26,17 @@
     <p> You, {{item.name}}, are in the deep woods with a {{item.gear}}.  But you knew that, didn't you??<br> You have a few options ahead of you.  </p>
     {{item.scenario}}
 
-    <div ng-show="crowbarScenario">Good choice! You fend off a pack of wolves and break into a nice house with cinnamon rolls inside on the counter. Enjoy!</div>
-    <div ng-show="flashlightScenario">FLASHLIGHT!
-      <p>Seriously? You picked a flashlight over a fucking crowbar? Are you kidding me, you can't see in the dark?? Didn't I just say the moon was out, and full? Seriously, think about your life's choices. You have one life point left, don't blow it.</p>
+    <div ng-show="crowbarScenario"><p>Good choice! Ahead of you to your left is a magnificent lit up gas station, possibly with some other survivors inside. To your right is darkness, a chill wind. Underneath the wind, there's the creaking of terrible whispers, like someone who hasn't spoken in some time.  It makes you shiver, but you do have your crow bar with you, and something about this your adventurous spirit.  You have a choice:</p>
+      <button><a ui-sref="gasStation">Go to the Gas Station!</a></button><br>
+      <button><a ui-sref="theWoods">Follow your spirit, go to the woods!</a></button>
     </div>
+
     <div ng-show="flaregunScenario">
-      <p>Your flaregun quickly goes off in your face, you lose 25 pts</p>
+      <p>Your flaregun quickly goes off in your face, you lose 5 pts.  Sorry about that.  <br> Moving on . . . <br>                                 </p>
     </div>
-</div>
+    
+    <div ng-show="flashlightScenario">
+      <p>You picked a flashlight over a crowbar? Didn't I just say the moon was out, and full? Think about your life's choices. You're basically not really into this game, so let's see how you do if you start over.  You're dead.  A thousand zombies were attracted to your flashlight and ate your brains.</p>
+      <button><a ui-sref="home">Start Over</a></button>
+    </div>
+  </div>

@@ -12,8 +12,10 @@ ghostStory.controller('PlayerCtrl', function PlayerCtrl($scope, PlayersFactory) 
     } else if ($scope.players[0].gear === "flashlight") {
       $scope.flashlightScenario = true;
       PlayersFactory.loseFive();
-    } else
+    } else {
       $scope.flaregunScenario = true;
       PlayersFactory.loseFive();
     }
+  };
+
 });

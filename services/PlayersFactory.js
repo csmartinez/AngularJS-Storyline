@@ -11,7 +11,7 @@ ghostStory.factory('PlayersFactory', function PlayersFactory() {
   };
 
   factory.loseFive = function() {
-    factory.player[0].points = (factory.player[0].points - 99);
+    factory.player[0].points = (factory.player[0].points - 5);
   };
   factory.addObject = function() {
     factory.player.push({gear: factory.items});

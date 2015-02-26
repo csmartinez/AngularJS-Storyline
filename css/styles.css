@@ -1,0 +1,21 @@
+body {
+  background-image: url("https://wpesart.files.wordpress.com/2012/03/tint-and-shade-haunted-house.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text: white;
+}
+.enter {
+  text-align: center;
+}
+
+.narration {
+  background-color: white;
+}
+
+p {
+  font-weight: 300;
+}
+
+.centered {
+  text-align: center;
+}

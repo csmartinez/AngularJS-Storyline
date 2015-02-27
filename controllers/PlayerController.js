@@ -1,4 +1,4 @@
-ghostStory.controller('PlayerCtrl', function PlayerCtrl($scope, PlayerFactory) {
+ghostStory.controller('PlayerCtrl', function PlayerCtrl($scope, $state, PlayerFactory) {
   $scope.player = PlayerFactory.player;
   $scope.PlayerFactory = PlayerFactory;
 
@@ -24,11 +24,4 @@ ghostStory.controller('PlayerCtrl', function PlayerCtrl($scope, PlayerFactory) {
     }
   };
 
-  // $scope.chooseScenarioTwo = function() {
-  //   if ($scope.players[0].gear === "crowbar") {
-  //     $scope.gasStaionCrowbar = true;
-  //   } else {
-  //     $scope.gasStationFlareGun = true;
-  //   }
-  // }
 });

@@ -1,7 +1,12 @@
+  <div class="narration" ng-click="chooseScenario()">
+    <h1>  Are you ready to see what happened . . . ??</h1>
+    <div ng-show="crowbarScenario">
+      <h1>YOU ARE {{player.name}} with a {{player.items}} You LOSE with {{player.points}} left</h1>
 
-<div class="container">
+    </div>
 
-    <h1> YOU ARE {{player.name}} </h1>
+    <div ng-show="flaregunScenario">
+      <h1>YOU ARE {{player.name}} with a {{player.items}} You LOSE</h1>
+    </div>
+
 </div>
-
-<div ui-view> </div>
